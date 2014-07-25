@@ -15,9 +15,9 @@ set_include_path(implode(PATH_SEPARATOR, array(
 )));
 
 defined('AMAZON_API_KEY')
-    || define('AMAZON_API_KEY',  'AKIAIQSGFKEGEGRAA52A');
+    || define('AMAZON_API_KEY',  'KEY_HERE);
 defined('AMAZON_SECRET_KEY')
-    || define('AMAZON_SECRET_KEY',  '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');
+    || define('AMAZON_SECRET_KEY',  'KEY_HERE');
 
 // Added By Jesus Real Serrano
 require_once "Zend/Loader/Autoloader.php";
