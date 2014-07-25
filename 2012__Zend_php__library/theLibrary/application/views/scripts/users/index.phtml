@@ -1,0 +1,38 @@
+<h3>List of users</h3>
+<!--  <h5><a href="<?php echo $this->url(array('controller'=>'index','action'=>'add'))?>" style="color:blue">
+	Add new user
+</a></h5>
+-->
+
+<table border="1">
+   <thead>   
+       <tr>
+           <th>Id</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Username</th>
+           <th>Email</th>
+           <th>Password</th>
+           <th>Role</th>
+           <th>Active</th>
+           <th>Activation code</th>
+       </tr>
+   </thead>
+   <tbody>
+       <?php 
+       foreach ($this->entries as $entry) {
+       ?>
+       <tr>
+           <td><?=$this->escape($entry->id)?></td>
+           <td><?=$this->escape($entry->firstName)?></td>
+           <td><?=$this->escape($entry->lastName)?></td>
+           <td><?=$this->escape($entry->username)?></td>
+           <td><?=$this->escape($entry->email)?></td>
+           <td><?=$this->escape($entry->password)?></td>
+           <td><?=$this->escape($entry->role)?></td>
+           <td><?=$this->escape($entry->active)?></td>
+           <td><?=$this->escape($entry->activationCode)?></td>
+       </tr>
+       <?php }?>
+   </tbody>
+</table>

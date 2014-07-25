@@ -1,0 +1,58 @@
+<br />
+<?
+if(isset($this->addBookMessage)){
+	echo $this->addBookMessage;
+}
+?>
+<h3>List of books</h3>
+<h5><a href="<?php echo $this->url(array('controller'=>'books','action'=>'add'))?>" style="color:blue">
+	Add new book by using its ASIN
+</a></h5>
+
+<dl>
+    <?php foreach ($this->entries as $entry): ?>
+    <dt>
+    	<?php echo $this->escape($entry->title) ?>
+    </dt>
+    <dd>
+    	ASIN: <?php echo $this->escape($entry->asin)."." ?> 
+    	<?php echo ($entry->ean) ? "EAN: ".$this->escape($entry->ean)."." : "" ?>
+    </dd>
+    <dd>
+    	<?php echo ($entry->publisher) ? "Publisher: ".$this->escape($entry->publisher)."." : "" ?>
+    	<?php echo ($entry->edition) ? $this->edition[$entry->edition]." Edition." : ""?>
+    	<?php echo ($entry->publicationDate) ? "Publication date: ".$this->escape($entry->publicationDate)."." : ""?>
+    </dd>
+    <dd>
+    	<?php echo ($entry->numberOfPages) ? "Number of Pages: ".$this->escape($entry->numberOfPages)."." : "" ?>
+    	<?php echo ($entry->formattedPrice) ? "Price: ".$entry->formattedPrice."."  : ""?></dd>
+    <dd>
+    	<?php echo ($entry->detailPageURL) ? "Detail Page URL: <a href=\"".$this->escape($entry->detailPageURL)."\">Click here</a>" : ""?>
+    </dd> 
+     <dd>
+     
+    	<?php echo (!$this->overdueDates[$entry->asin]) ? 
+    			"<a href=\"".$this->url(array('controller'=>'loans','action'=>'addloan', 'asin'=>$entry->asin)). "\">Loan this book</a>"
+    			: (($this->leantByLoggedUser[$entry->asin]) ? "You have lent this book until ". $this->overdueDates[$entry->asin].
+    				". Please <a href=\"".$this->url(array('controller'=>'loans','action'=>'deleteloan', 'asin'=>$entry->asin))."\">click here</a> to return the book"
+    			: "This book is lent until ". $this->overdueDates[$entry->asin].".")?>
+    </dd>   
+    <?php // var_dump($entry); ?>
+    <br/>
+    <?php endforeach ?>    
+       
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

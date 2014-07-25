@@ -1,0 +1,46 @@
+<div id="view-content" style="line-height:2">
+	<h3>Welcome to 'The library' Please choose one of the following options</h3>
+
+	<dl>
+		<dt>
+	    	<b>Users</b>
+		</dt>
+		<dd>
+		    <a href="<? echo $this->url(array('controller'=>'users','action'=>'signup')) ?>">
+				Register 
+			</a>
+		</dd>
+	    <dd>
+		    <a href="<? echo $this->url(array('controller'=>'users','action'=>'login')) ?>">
+				Login 
+			</a>
+		</dd>
+		<dt>
+	    	<b>Books and loan</b>
+		</dt>
+	    <dd>
+		    <a href="<? echo $this->url(array('controller'=>'books','action'=>'index')) ?>">
+				Overview book list and their loan state 
+			</a>
+		</dd>
+		<dd>
+		    <a href="<? echo $this->url(array('controller'=>'books','action'=>'add')) ?>">
+				Add a new book entry by using its ASIN code 
+			</a>
+		</dd>
+		<dd>
+		    <a href="<? echo $this->url(array('controller'=>'loans','action'=>'index')) ?>">
+				My loans 
+			</a>
+		</dd>
+		<dt>
+	    	<b>Admin contents</b>
+		</dt>
+		<dd>
+			<a href="<? echo $this->url(array('controller'=>'users','action'=>'index')) ?>">
+				List of users
+			</a>
+		</dd>
+		
+	</dl>	
+</div>

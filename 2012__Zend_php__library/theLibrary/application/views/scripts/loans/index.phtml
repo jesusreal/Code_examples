@@ -1,0 +1,28 @@
+<h3>List of loans</h3>
+
+</a></h5>
+<table border="1">
+   <thead>   
+       <tr>
+           <th>Id</th>
+           <th>Use Email</th>
+           <th>Book ASIN</th>
+           <th>Overdue Date</th>
+           <th>Mail sent</th>
+       </tr>
+   </thead>
+   <tbody>
+       <?php 
+       foreach ($this->entries as $entry) {
+       ?>
+       <tr>
+           <td><?=$this->escape($entry->id)?></td>
+           <td><?=$this->escape($entry->email)?></td>
+           <td><?=$this->escape($entry->asin)?></td>
+           <td><?=$this->escape($entry->overdue)?></td>
+           <td><?=$this->escape($entry->mailSent)?></td>
+       </tr>
+       <?php } var_dump($this->hola); ?>
+       
+   </tbody>
+</table>

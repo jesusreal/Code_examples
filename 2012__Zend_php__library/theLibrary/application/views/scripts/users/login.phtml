@@ -1,0 +1,18 @@
+ <?
+if(isset($this->errorMessage)){
+	echo $this->errorMessage;
+}
+
+
+
+$storage = new Zend_Auth_Storage_Session();
+$data = $storage->read();
+
+if($data){    
+    echo "<p>Welcome $data->username </p>";
+	echo "<a href=\"".$this->url(array('controller'=>'users','action'=>'logout'))."\">click here to logout</a>";
+} else {
+   	echo $this->loginForm;
+	echo "<a href=\"". $this->url(array('controller'=>'users','action'=>'signup')) . "\">New users click here</a>";
+}
+?>

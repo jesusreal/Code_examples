@@ -1,0 +1,37 @@
+<br /><br />
+<?
+if(isset($this->Message)){
+		echo $this->Message;
+	
+}
+?><div id="view-content">
+	<h3>Add a book entry</h3>
+<?
+
+if(isset($this->errorMessage)){
+	echo $this->errorMessage;
+}
+?>
+<?
+echo $this->form;
+?>
+  <?php 
+    //$image = new Zend_Uri_Http();
+    //foreach ($this->entries as $entry): 
+ /*  var_dump($this->entry->ASIN);
+   var_dump($this->entry->Title);
+      var_dump($this->entry->PublicationDate);
+       var_dump($this->entry->NumberOfPages);
+              var_dump($this->entry->EAN);
+              var_dump($this->entry->Edition);
+                     var_dump($this->entry->Publisher);
+                                   var_dump($this->entry->FormattedPrice);
+                                   var_dump($this->image);
+                                   echo "<br/>";
+                                   
+      var_dump($this->entry);
+   */
+  //break;
+     //endforeach ?>
+
+</div>
